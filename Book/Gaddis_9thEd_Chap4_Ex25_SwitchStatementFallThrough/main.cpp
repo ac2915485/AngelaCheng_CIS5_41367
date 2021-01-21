@@ -13,8 +13,6 @@
 
 //System Libraries
 #include <iostream> //I/O Library
-#include <iomanip>
-#include <string>
 using namespace std;
 
 //User Libraries
@@ -30,28 +28,27 @@ int main(int argc, char** argv) {
     //Initialize the Random Number Seed
     
     //Declare Variables
-    const float PRICE_A=249.0,
-            PRICE_B=199.0;
-    string partNum;
+    int model;
     
     //Initialize Variables
-    cout<<"The headphone part numbers are: "<<endl;
-    cout<<"Noise canceling part number S-29A"<<endl;
-    cout<<"Wireless part number: S-29B"<<endl;
-    cout<<"Enter the part number of the headphones you wish to purchase."<<endl;
-    cin>>partNum;
+    cout<<"Our TVs come in three models:"<<endl;
+    cout<<"The 100, 200, and 300. Which one do you want?"<<endl;
+    cin>>model;
     
     //Map Inputs to Outputs -> Process
     
     
     //Display Inputs/Outputs
-    cout<<fixed<<showpoint<<setprecision(2);
-    if (partNum=="S-29A") {
-        cout<<"The price is $"<<PRICE_A<<endl;
-    } else if (partNum=="S-29B") {
-        cout<<"The price is $"<<PRICE_B<<endl;
-    } else {
-        cout<<partNum<<" is not a valid part number."<<endl;
+    cout<<"That model has the following features:"<<endl;
+    switch (model) {
+        case 300:
+            cout<<"\tPicture-in-a-picture."<<endl;
+        case 200:
+            cout<<"\tStereo sound."<<endl;
+        case 100:
+            cout<<"\tRemote control."<<endl;
+        default:
+            cout<<"You can only choose the 100, 200, or 300."<<endl;
     }
     
     //Exit the Program - Cleanup

@@ -13,8 +13,6 @@
 
 //System Libraries
 #include <iostream> //I/O Library
-#include <iomanip>
-#include <string>
 using namespace std;
 
 //User Libraries
@@ -30,28 +28,32 @@ int main(int argc, char** argv) {
     //Initialize the Random Number Seed
     
     //Declare Variables
-    const float PRICE_A=249.0,
-            PRICE_B=199.0;
-    string partNum;
+    char feedGrd; //the grade of feed
     
     //Initialize Variables
-    cout<<"The headphone part numbers are: "<<endl;
-    cout<<"Noise canceling part number S-29A"<<endl;
-    cout<<"Wireless part number: S-29B"<<endl;
-    cout<<"Enter the part number of the headphones you wish to purchase."<<endl;
-    cin>>partNum;
+    cout<<"Our pet food is available in three grades:"<<endl;
+    cout<<"A, B, and C. Which one you want pricing for?"<<endl;
+    cin>>feedGrd;
     
     //Map Inputs to Outputs -> Process
     
     
     //Display Inputs/Outputs
-    cout<<fixed<<showpoint<<setprecision(2);
-    if (partNum=="S-29A") {
-        cout<<"The price is $"<<PRICE_A<<endl;
-    } else if (partNum=="S-29B") {
-        cout<<"The price is $"<<PRICE_B<<endl;
-    } else {
-        cout<<partNum<<" is not a valid part number."<<endl;
+    switch (feedGrd) {
+        case 'a':
+        case'A':
+            cout<<"30 cents per pound."<<endl;
+            break;
+        case 'b':
+        case 'B':
+            cout<<"20 cents per pound."<<endl;
+            break;
+        case 'c':
+        case 'C':
+            cout<<"15 cents per pound."<<endl;
+            break;
+        default: 
+            cout<<"That is an invalid choice"<<endl;
     }
     
     //Exit the Program - Cleanup
