@@ -1,0 +1,66 @@
+/* 
+ * File:   main.cpp
+ * Author: angela
+ *
+ * Created on January 14, 2021, 8:51 PM
+ * Purpose: CPP Template
+ *          To be copied for each Assignment problem
+ */
+
+/*
+ *This is a block comment
+ */
+
+//System Libraries
+#include <iostream> //I/O Library
+#include <cstdlib>  //Random Fundtion
+#include <ctime>    //Time to set seed
+using namespace std;
+
+//User Libraries
+
+
+//Global Constants
+//Math, Science, Universal, Conversions, High Dimensioned Arrays
+
+//Function Prototypes
+
+//Execution Begins Here
+int main(int argc, char** argv) {
+    //Initialize the Random Number Seed
+    srand(static_cast<unsigned int>(time(0)));
+    
+    //Declare Variables
+    char grade;  //Grade A, B, C, D, F
+    unsigned char score;  //Numeric value from 0 to 100
+    
+    //Initialize Variables
+    score=rand()%51+50;  //Score inclusive range[50,100]
+    
+    //Map Inputs to Outputs -> Process
+    if(score<60) {
+        grade='F';
+    }
+    if (score>=60&&score<70) {
+        grade='D';
+    }
+    if (score>=70&&score<80) {
+        grade='C';
+    }
+    if (score>=80&&score<90) {
+        grade='B';
+    }
+    if (score>=90&&score<=100) {
+        grade='A';
+    }
+    if (score<0||score>100) {
+        cout<<"Not Possible"<<endl;
+    }
+    
+    //Display Inputs/Outputs
+    cout<<"A score of "<<static_cast<int>(score)<<" is a "<<grade<<" grade!"<<endl;
+    
+    //Exit the Program - Cleanup
+    return 0;
+}
+
